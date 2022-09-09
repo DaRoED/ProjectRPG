@@ -1,6 +1,28 @@
 var Login = {}; //로그인 변수
 
 /**
+*회원가입 함수
+*@param {string} id 아이디(영문자 필수, 숫자, 언더바 가능, 6글자 이상)
+*@param {string} password 비밀번호(영문자 또는 숫자 필수. 언더바 사용가능, 6글자 이상)
+*@param {number | string} userProfile 유저 관련 내용
+*@return 0 : 잘못된 아이디, 1 : 잘못된 비밀번호, 2 : 이미 회원가입된 아이디, 3 : 회원가입 성공
+*/
+function sign_up(id, password, userProfile){
+  id = id.trim();
+  password = password.trim();
+  if(!id||!id.match(/a-zA-z/)||id.match(/\W/)||id.length >= 6)
+    return 0;
+  if(password == undefined||!password.match(/a-zA-z|0-9/)||password.match(/\W/)||password.length >= 6)
+    return 1;
+  let ids = getDB("user");
+  if(ids[id] != undefined)
+    return 2;
+  ids[id] = { password : password, usingUser : false /** and more... */ };
+  saveDB(ids, "user");
+  return 3;
+}
+
+/**
 *로그인 함수
 *@param {string} id 아이디(영문자 필수, 숫자, 언더바 가능, 6글자 이상)
 *@param {string} password 비밀번호(영문자 또는 숫자 필수. 언더바 사용가능, 6글자 이상)
