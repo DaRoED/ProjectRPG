@@ -5,7 +5,7 @@ function DB() {}
  * @param {string} name 
  * @returns {object}
  */
-DB.prototype.getDB = function(name = 'user') { // DB를 가져옵니다.
+DB.prototype.getDB = function(name) { // DB를 가져옵니다.
     switch (name) {
         case 'user':
             return JSON.parse(fs.read('sdcard/RPG/DB/user.json'))
