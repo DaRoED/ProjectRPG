@@ -10,9 +10,9 @@ var Login = {}; //로그인 변수
 function sign_up(id, password, userProfile){
   id = id.trim();
   password = password.trim();
-  if(!id||!id.match(/a-zA-z/)||id.match(/\W/)||id.length >= 6)
+  if(!id||!id.test(/a-zA-z/)||id.test(/\W/)||id.length >= 6)
     return 0;
-  if(password == undefined||!password.match(/[a-zA-z0-9]/)||password.match(/\W/)||password.length < 6)
+  if(password == undefined||!password.test(/[a-zA-z0-9]/)||password.test(/\W/)||password.length < 6)
     return 1;
   let ids = getDB("user");
   if(ids[id] != undefined)
