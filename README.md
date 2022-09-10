@@ -1,6 +1,6 @@
 # TODO LIST
 
-- content.json 파일 만들기 [ x ]
+- content.json 파일 만들기 [ ■■■□□ ]
 - 로그인 매니저 만들기 [ ■■■□□ ]
 - 맵 제작 [ x ]
 - 사냥 기능 제작 [ x ]
