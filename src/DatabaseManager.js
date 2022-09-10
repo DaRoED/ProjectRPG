@@ -19,7 +19,10 @@ DB.prototype.getDB = function(name = 'user') { // DB를 가져옵니다.
             throw 'wrong name, please correction name'
     }
 }
-
+/**
+ * @param {string} value 
+ * @param {string} path 
+ */
 DB.prototype.saveDB = function(value, path) { // 첫 번째 인자로 넣은 값을 path 경로에 따라 백업 및 저장
     if (typeof value === 'object') { // 만약 첫 번째 인자로 object 타입을 넣었을 시 string으로 형변환
         value = JSON.stringify(value);
@@ -46,8 +49,11 @@ DB.prototype.saveDB = function(value, path) { // 첫 번째 인자로 넣은 값
             throw 'please check path one more';
     }
 }
-
-DB.prototype.create_userInformation = function(id, pw) {
+/**
+ * @param {string} id 
+ * @param {string} pw 
+ */
+DB.prototype.create_userInformation = function(id, pw) { // 유저 정보를 생성
     this.id = id;
     this.pw = pw;
     this.inventory = {};
