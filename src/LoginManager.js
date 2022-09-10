@@ -12,7 +12,7 @@ function sign_up(id, password, userProfile){
   password = password.trim();
   if(!id||!id.match(/a-zA-z/)||id.match(/\W/)||id.length >= 6)
     return 0;
-  if(password == undefined||!password.match(/a-zA-z|0-9/)||password.match(/\W/)||password.length >= 6)
+  if(password == undefined||!password.match(/[a-zA-z0-9]/)||password.match(/\W/)||password.length < 6)
     return 1;
   let ids = getDB("user");
   if(ids[id] != undefined)
