@@ -74,7 +74,7 @@ DB.prototype.create_userInformation = function(id, pw) { // 유저 정보를 생
     this.xp = 0;
     this.nxp = 10;
     this.level = 1;
-    this.att = 2;
+    this.atk = 2;
     this.def = 3;
     this.hp = 20;
 }
