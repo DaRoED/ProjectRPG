@@ -4,9 +4,10 @@
  *  ---------------------------
  * 
  * ver 1.0.0 - sing_up, sign_in, check_login 메서드 정의
+ * ver 1.0.1 - 오류 수정
  */
 var DB = Bridge.getScopeOf('DatabaseManager').DB;
-DB = new DB();
+DB = new DB.DB();
 
 function Login() { }
 
