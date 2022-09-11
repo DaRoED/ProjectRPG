@@ -1,0 +1,71 @@
+{
+  "sundryItem": {
+    "slime_mucus": {
+      "name": "슬라임 점액",
+      "description": "슬라임의 몸을 덮고있는 물질이다. 회복 포션 제조 등 여러가지 용도로 사용된다."
+    },
+    "poison": {
+      "name": "독",
+      "description": "포이즌 슬라임의 점액에서 추출해낸 독이다."
+    },
+    "wood": {
+      "name": "나무",
+      "description": "벌목으로 얻을 수 있다."
+    },
+    "iron": {
+      "name": "철",
+      "description": "광질로 얻을 수 있다."
+    }
+  },
+  "wearItem": {
+    "wooden_stick": {
+      "name": "나무 막대기",
+      "description": "나무로 만든 막대기이다. 별로 단단하지는 않은 것 같다.",
+      "att": 1,
+      "def": 0,
+      "hp": 0,
+      "wear_area": "weapon"
+    },
+    "iron_stick": {
+      "name": "철 막대기",
+      "description": "철로 만들어진 막대기이다. 나무 막대기 보단 튼튼하며 공격을 막을 수도 있을 것 같다.",
+      "att": 3,
+      "def": 1,
+      "hp": 0,
+      "wear_area": "weapon"
+    },
+    "leather_helmet": {
+      "name": "가죽 모자",
+      "description": "가죽으로 만든 모자이다. 약간의 한기와 충격을 막아주어 두뇌 회전을 빠르게 해준다.",
+      "att": 0,
+      "def": 2,
+      "hp": 0,
+      "wear_area": "helmet"
+    },
+    "leather_armor": {
+      "name": "가죽 조끼",
+      "description": "가죽으로 만든 조끼이다. 약간의 한기와 충격으로부터 몸을 보호해준다.",
+      "att": 0,
+      "def": 4,
+      "hp": 0,
+      "wear_area": "armor"
+    },
+    "leather_legings": {
+      "name": "가죽 바지",
+      "description": "가죽으로 만든 바지이다. 입으면 따뜻할 것 같다.",
+      "att": 0,
+      "def": 3,
+      "hp": 0,
+      "wear_area": "legings"
+    },
+    "leather_boots": {
+      "name": "가죽 신발",
+      "description": "가죽으로 만든 신발이다. 신으면 발이 따뜻해진다.",
+      "att": 0,
+      "def": 2,
+      "hp": 0,
+      "wear_area": "boots"
+    }
+  },
+  "useItem": {}
+}
