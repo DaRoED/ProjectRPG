@@ -1,9 +1,15 @@
+/**
+ * DatabaseManager.js ver 1.0.1
+ * ver 1.0 - getDB, saveDB, create_userInformation 메서드 정의
+ * ver 1.0.1 - getUser 메서드 정의
+ */
+
 const fs = FileStream;
 
 function DB() {}
 /**
  * @param {string} name 
- * @returns {object}
+ * @returns {array}
  */
 DB.prototype.getDB = function(name) { // DB를 가져옵니다.
     switch (name) {
@@ -30,7 +36,7 @@ DB.prototype.saveDB = function(value, path) { // 첫 번째 인자로 넣은 값
 
     switch (path) {
         case 'user':
-            fs.write('sdcard/RPG/backup/user.json', JSON.stringify(this.getDB()));
+            fs.write('sdcard/RPG/backup/user.json', JSON.stringify(this.getDB('user')));
             fs.write('sdcard/RPG/DB/user.json', value);
             break;
         case 'item':
@@ -53,7 +59,7 @@ DB.prototype.saveDB = function(value, path) { // 첫 번째 인자로 넣은 값
  * @param {string} id 
  * @param {string} pw 
  */
-DB.prototype.create_userInformation = function(id, pw) { // 유저 정보를 생성
+DB.prototype.create_userInformation = function(id, pw) { // 유저 정보를 생성 및 반환
     this.id = id;
     this.pw = pw;
     this.inventory = {};
@@ -64,11 +70,22 @@ DB.prototype.create_userInformation = function(id, pw) { // 유저 정보를 생
     this.inventory.wearItem.armor = 'empty';
     this.inventory.wearItem.legings = 'empty';
     this.inventory.wearItem.boots = 'emtpy';
+    this.inventory.wearItem.weapon = 'empty';
     this.xp = 0;
     this.nxp = 10;
     this.level = 1;
     this.att = 2;
     this.def = 3;
     this.hp = 20;
-    this.statPoint = 0;
+}
+/**
+ * 
+ * @param {string} id 
+ * @returns {new create_userInformation}
+ */
+DB.prototype.getUser = function(id) { // 인자로 받은 id를 가지는 유저 객체를 반환합니다.
+    const _user = this.getDB('user').find(user => user.id === id);
+
+    if (_user) return { statusCode: true, _user: _user }; 
+    else return { statusCode: false };
 }
