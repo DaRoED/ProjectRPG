@@ -1,23 +1,24 @@
 /**
  *  ---------------------------
- * | LoginManager.js ver 1.0.1 |
+ * | LoginManager.js ver 1.0.2 |
  *  ---------------------------
  * 
  * ver 1.0.0 - sing_up, sign_in, check_login 메서드 정의
  * ver 1.0.1 - 오류 수정
+ * ver 1.0.2 - 오류 수정
  */
-var DB = Bridge.getScopeOf('DatabaseManager').DB;
+var DB = Bridge.getScopeOf('DatabaseManager');
 DB = new DB.DB();
 
 function Login() { }
 
 Login.prototype.sign_up = function (id, pw) {
-    const user = getDB('user');
+    const user = DB.getDB('user');
     const check_sameUser = user.some(obj => obj.id === id);
 
     if (!check_sameUser) {
         user.push(new DB.create_userInformation(id, pw));
-        DB.saveDB(user, 'user')
+        DB.saveDB(user, 'user');
 
         return { statusCode: true };
     } else {
@@ -38,8 +39,8 @@ Login.prototype.sign_up = function (id, pw) {
  * 3: 회원가입이 안되어있다.
  */
 Login.prototype.sign_in = function (id, pw) {
-    const USER = getDB('user'); // user 객체를 불러온다.
-    const user = getUser(id); // 참조용 > 확인용
+    const USER = DB.getDB('user'); // user 객체를 불러온다.
+    const user = DB.getUser(id); // 참조용 > 확인용
 
     if (user.statusCode) {
         if (this.check_login(id)) return { statuscode: 0 }; // 로그인이 되어있으면 { statusCode: 0 }을 반환
@@ -63,7 +64,7 @@ Login.prototype.sign_in = function (id, pw) {
  * @returns {boolean} 
  */
 Login.prototype.check_login = function (id) {
-    const user = getUser(id);
+    const user = DB.getUser(id);
 
     if (user._user.isLogin) return true;
     else return false;
