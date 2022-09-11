@@ -10,7 +10,7 @@
                 "slime_mucus"
             ],
             "dropXp": 5,
-            "dropCoin": 10
+            "dropGold": 10
         },
         "poison_slime": {
             "name": "포이즌 슬라임",
@@ -22,7 +22,7 @@
                 "poison"
             ],
             "dropXp": 7,
-            "dropCoin": 13
+            "dropGold": 13
         },
         "monkey": {
             "name": "원숭이",
@@ -34,7 +34,7 @@
                 "stone"
             ],
             "dropXp": 10,
-            "dropCoin": 20
+            "dropGold": 20
         }
     },
     "boss": {}
