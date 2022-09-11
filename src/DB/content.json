@@ -18,7 +18,7 @@
       "slime": {
           "name": "슬라임",
           "description": "끈적끈적한 점액으로 뒤덮혀있다.",
-          "att": 2,
+          "atk": 2,
           "def": 1,
           "hp": 10,
           "dropItem": [
@@ -30,7 +30,7 @@
       "poison_slime": {
         "name": "포이즌 슬라임",
         "description": "몸을 둘러싸고있는 점액에 소량에 독이 있어 닿으면 꽤나 고통스럽다.",
-        "att": 5,
+        "atk": 5,
         "def": 3,
         "hp": 10,
         "dropItem": [
@@ -42,7 +42,7 @@
       "monkey": {
         "name": "원숭이",
         "description": "도구를 사용하여 영리하게 공격한다.",
-        "att": 10,
+        "atk": 10,
         "def": 5,
         "hp": 20
       }
