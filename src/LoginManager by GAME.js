@@ -1,6 +1,6 @@
 /**
  *  ---------------------------
- * | LoginManager.js ver 1.0.0 |
+ * | LoginManager.js ver 1.0.1 |
  *  ---------------------------
  * 
  * ver 1.0.0 - sing_up, sign_in, check_login 메서드 정의
