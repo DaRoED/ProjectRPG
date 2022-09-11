@@ -1,7 +1,11 @@
-/**
- * DatabaseManager.js ver 1.0.1
+/** 
+ *  ------------------------------
+ * | DatabaseManager.js ver 1.0.2 |
+ *  ------------------------------
+ * 
  * ver 1.0 - getDB, saveDB, create_userInformation 메서드 정의
  * ver 1.0.1 - getUser 메서드 정의
+ * ver 1.0.2 create_userInformation 내용 수정(this.isLogin 추가)
  */
 
 const fs = FileStream;
@@ -77,6 +81,7 @@ DB.prototype.create_userInformation = function(id, pw) { // 유저 정보를 생
     this.atk = 2;
     this.def = 3;
     this.hp = 20;
+    this.isLoing = true;
 }
 /**
  * 
